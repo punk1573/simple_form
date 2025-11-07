@@ -1,6 +1,7 @@
 import { connectDB } from '~/server/utils/db'
 import { UserData } from '~/server/models/UserData'
 import { z } from 'zod'
+import { getRequestIP } from 'h3'
 
 // 基础数据验证 Schema
 const submitSchema = z.object({
@@ -22,7 +23,8 @@ export default defineEventHandler(async (event) => {
     const validatedData = submitSchema.parse(body)
     
     // 获取客户端 IP
-    const clientIP = getClientIP(event) || 'unknown'
+    const clientIP = getRequestIP(event) || 'unknown'
+    console.log('[submit] validated data', { ...validatedData, ipAddress: clientIP })
     
     // 创建用户数据记录
     const userData = new UserData({
@@ -32,6 +34,7 @@ export default defineEventHandler(async (event) => {
     })
     
     await userData.save()
+    console.log('[submit] saved', userData._id.toString())
     
     return {
       success: true,

@@ -104,7 +104,10 @@
         </div>
 
         <!-- 提交按钮 -->
-        <div class="pt-4">
+        <div class="pt-4 space-y-3">
+          <p v-if="submitError" class="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+            {{ submitError }}
+          </p>
           <button
             type="submit"
             :disabled="submitting"
@@ -183,6 +186,7 @@ const errors = ref<Record<string, string>>({})
 const loading = ref(true)
 const submitting = ref(false)
 const submitSuccess = ref(false)
+const submitError = ref<string | null>(null)
 const error = ref<string | null>(null)
 
 // 加载表单定义
@@ -283,6 +287,7 @@ async function handleSubmit() {
 
   submitting.value = true
   errors.value = {}
+  submitError.value = null
 
   try {
     const response = await $fetch<{ success: boolean; message?: string; errors?: any[] }>('/api/form/submit', {
@@ -303,11 +308,11 @@ async function handleSubmit() {
           errors.value[err.path?.[0] || ''] = err.message || '验证失败'
         })
       } else {
-        error.value = response.message || '提交失败，请重试'
+        submitError.value = response.message || '提交失败，请重试'
       }
     }
   } catch (err: any) {
-    error.value = err.message || '网络错误，请稍后重试'
+    submitError.value = err.message || '网络错误，请稍后重试'
   } finally {
     submitting.value = false
   }
