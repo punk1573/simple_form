@@ -25,6 +25,10 @@ const UserDataSchema = new mongoose.Schema({
     required: false,
     index: true // 为身份证号创建索引
   },
+  address: {
+    type: String,
+    required: false
+  },
   // 可以存储额外的动态字段
   extraData: {
     type: Map,

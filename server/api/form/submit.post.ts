@@ -10,6 +10,7 @@ const submitSchema = z.object({
   gender: z.enum(['男', '女', '其他']).optional(),
   phone: z.string().regex(/^1[3-9]\d{9}$/).optional(),
   idCard: z.string().regex(/^[1-9]\d{5}(18|19|20)\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])\d{3}[0-9Xx]$/).optional(),
+  address: z.string().max(200).optional(),
   extraData: z.record(z.any()).optional()
 })
 

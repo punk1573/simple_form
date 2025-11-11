@@ -69,6 +69,17 @@ export default defineEventHandler(async (event) => {
                 pattern: '^[1-9]\\d{5}(18|19|20)\\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\\d|3[01])\\d{3}[0-9Xx]$'
               },
               order: 5
+            },
+            {
+              name: 'address',
+              label: '户籍地址',
+              type: 'textarea',
+              required: false,
+              placeholder: '请输入户籍地址（省市区街道等详细信息）',
+              validation: {
+                maxLength: 200
+              },
+              order: 6
             }
           ]
         }

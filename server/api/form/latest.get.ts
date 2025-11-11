@@ -14,6 +14,7 @@ export default defineEventHandler(async () => {
       gender: i.gender,
       phone: i.phone,
       idCard: i.idCard,
+      address: i.address,
       submittedAt: i.submittedAt,
       createdAt: i.createdAt,
     }))
