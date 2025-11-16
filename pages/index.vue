@@ -101,6 +101,41 @@
           <p v-if="errors[field.name]" class="text-sm text-red-500">
             {{ errors[field.name] }}
           </p>
+
+          <!-- 验证码字段（电话字段后显示） -->
+          <div v-if="field.name === 'phone'" class="space-y-2 mt-4">
+            <label class="block text-sm font-medium text-gray-700">
+              验证码
+              <span class="text-red-500 ml-1">*</span>
+            </label>
+            <div class="flex gap-2">
+              <input
+                v-model="verificationCode"
+                type="text"
+                placeholder="请输入6位验证码"
+                maxlength="6"
+                required
+                class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
+                :class="{ 'border-red-500': errors.verificationCode }"
+              />
+              <button
+                type="button"
+                @click="sendCode"
+                :disabled="!formData.phone || sendingCode || countdown > 0"
+                class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+              >
+                <span v-if="countdown > 0">{{ countdown }}秒后重发</span>
+                <span v-else-if="sendingCode">发送中...</span>
+                <span v-else>发送验证码</span>
+              </button>
+            </div>
+            <p v-if="errors.verificationCode" class="text-sm text-red-500">
+              {{ errors.verificationCode }}
+            </p>
+            <p v-if="codeSent && !errors.verificationCode" class="text-sm text-green-600">
+              ✓ 验证码已发送，请查收
+            </p>
+          </div>
         </div>
 
         <!-- 提交按钮 -->
@@ -188,6 +223,12 @@ const submitting = ref(false)
 const submitSuccess = ref(false)
 const submitError = ref<string | null>(null)
 const error = ref<string | null>(null)
+
+// 验证码相关状态
+const verificationCode = ref('')
+const sendingCode = ref(false)
+const countdown = ref(0)
+const codeSent = ref(false)
 
 // 加载表单定义
 async function loadFormDefinition() {
@@ -279,9 +320,68 @@ function validateForm(): boolean {
   return isValid
 }
 
+// 发送验证码
+async function sendCode() {
+  if (!formData.value.phone) {
+    errors.value.verificationCode = '请先输入手机号码'
+    return
+  }
+
+  // 验证手机号格式
+  const phonePattern = /^1[3-9]\d{9}$/
+  if (!phonePattern.test(formData.value.phone)) {
+    errors.value.verificationCode = '请输入正确的手机号码'
+    return
+  }
+
+  sendingCode.value = true
+  errors.value.verificationCode = ''
+  codeSent.value = false
+
+  try {
+    const response = await $fetch<{ success: boolean; message?: string; code?: string }>('/api/sms/send', {
+      method: 'POST',
+      body: { phone: formData.value.phone }
+    })
+
+    if (response.success) {
+      codeSent.value = true
+      // 开发环境显示验证码
+      if (response.code) {
+        console.log('验证码:', response.code)
+      }
+      // 开始倒计时
+      countdown.value = 60
+      const timer = setInterval(() => {
+        countdown.value--
+        if (countdown.value <= 0) {
+          clearInterval(timer)
+        }
+      }, 1000)
+    } else {
+      errors.value.verificationCode = response.message || '发送失败，请重试'
+    }
+  } catch (err: any) {
+    errors.value.verificationCode = err.message || '网络错误，请稍后重试'
+  } finally {
+    sendingCode.value = false
+  }
+}
+
 // 提交表单
 async function handleSubmit() {
   if (!validateForm()) {
+    return
+  }
+
+  // 验证验证码
+  if (!verificationCode.value) {
+    errors.value.verificationCode = '请输入验证码'
+    return
+  }
+
+  if (verificationCode.value.length !== 6) {
+    errors.value.verificationCode = '验证码为6位数字'
     return
   }
 
@@ -290,6 +390,22 @@ async function handleSubmit() {
   submitError.value = null
 
   try {
+    // 先验证验证码
+    const verifyResponse = await $fetch<{ success: boolean; message?: string }>('/api/sms/verify', {
+      method: 'POST',
+      body: {
+        phone: formData.value.phone,
+        code: verificationCode.value
+      }
+    })
+
+    if (!verifyResponse.success) {
+      errors.value.verificationCode = verifyResponse.message || '验证码错误'
+      submitting.value = false
+      return
+    }
+
+    // 验证码验证成功，提交表单数据
     const response = await $fetch<{ success: boolean; message?: string; errors?: any[] }>('/api/form/submit', {
       method: 'POST',
       body: formData.value
@@ -323,6 +439,9 @@ function resetForm() {
   submitSuccess.value = false
   formData.value = {}
   errors.value = {}
+  verificationCode.value = ''
+  codeSent.value = false
+  countdown.value = 0
   loadFormDefinition()
 }
 

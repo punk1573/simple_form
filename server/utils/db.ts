@@ -25,6 +25,12 @@ export async function connectDB() {
       await mongoose.connect(mongoUri)
       isConnected = true
       console.log('✅ MongoDB 连接成功')
+      
+      // 确保所有模型都已注册
+      // 这会触发模型定义，确保它们在数据库连接后可用
+      await import('~/server/models/UserData')
+      await import('~/server/models/FormSchema')
+      await import('~/server/models/VerificationCode')
     } catch (error) {
       console.error('❌ MongoDB 连接失败:', error)
       isConnected = false

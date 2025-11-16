@@ -23,7 +23,8 @@ const UserDataSchema = new mongoose.Schema({
   idCard: {
     type: String,
     required: false,
-    index: true // 为身份证号创建索引
+    index: true, // 为身份证号创建索引
+    unique: false // 允许重复（因为我们要实现覆盖逻辑，不是唯一约束）
   },
   address: {
     type: String,
