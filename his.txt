@@ -1,0 +1,1024 @@
+   40  adb shell
+   41  pllk.sh
+   42  adbpowkey.sh
+   43  adbpowkey.sh
+   44  adbshutdown.sh
+   45  adbshutdown.sh
+   46  show_version.sh
+   47  adb shell wm size
+   48  scrcpy
+   49  adb shell
+   50  adb shell wm size
+   51  envcfg2.sh
+   52  envcfg2.sh hdmi768 1
+   53  envcfg2.sh 
+   54  envcfg2.sh 
+   55  show_version.sh
+   56  adb shell wm size
+   57  adb shell wm size
+   58  show_version.sh
+   59  adb shell
+   60  adb shell
+   61  adb shell wm size
+   62  show_version.sh
+   63  pwd
+   64  adb_run_launcher.sh
+   65  pwd
+   66  pwd
+   67  cd ..
+   68  ls
+   69  cd yicheng_yc10
+   70  ls
+   71  mkdir boot_in_usb_otg_charge
+   72  cd boot_in_usb_otg_charge
+   73  mkdir 1
+   74  getmblog.sh
+   75  echo "boot with otg on dock but it seems the usb host not working." > log.txt
+   76  echo "plug out of dock after 16:38" >> log.txt
+   77  echo "plug  into dock at 16:39 around and ethernet work" >> log.txt
+   78  vim
+   79  scrcpy
+   80  scrcpy
+   81  scrcpy
+   82  adb_run_launcher.sh
+   83  show_version.sh
+   84  adb shell wm size
+   85  mkdir temp/72_huaheng_st7703
+   86  cd temp/72_huaheng_st7703
+   87  get_infos.sh
+   88  ls
+   89  adb shell getprop persist.tml.statusBarD.dis
+   90  adb_run_launcher.sh
+   91  adb shell getprop persist.tml.nav.ges.dis
+   92  pwd
+   93  cd ..
+   94  ls
+   95  scrcpy
+   96  scrcpy
+   97  scrcpy
+   98  scrcpy
+   99  which ads1298_en.sh| xargs cat
+  100  adb shell cat  /sys/class/misc/ecg/scp_A_ecg_power
+  101  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  102  ads1298_en.sh 0
+  103  ads1298_en.sh 1
+  104  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  105  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  106  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  107  ads1298_en.sh 1
+  108  ads1298_en.sh 0
+  109  ads1298_en.sh 1
+  110  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  111  adb shell cat /sys/class/misc/ecg/scp_A_ecg_power
+  112  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  113  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  114  ads1298_en.sh 0
+  115  ads1298_en.sh 
+  116  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  117  adb shell cat /sys/class/misc/ecg/scp_A_ecg_power
+  118  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  119  adb shell cat /sys/class/misc/ecg/scp_A_ecg_power
+  120  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  121  adb shell cat /sys/class/misc/ecg/scp_A_ecg_power
+  122  ads1298_en.sh 0
+  123  ads1298_en.sh 1
+  124  adb shell cat /sys/class/misc/ecg/scp_A_ecg_power
+  125  adb shell cat /sys/class/misc/ecg/scp_mobile_ecg
+  126  cat ~/bin/ads1298_en.sh
+  127  kmsg.sh
+  128  . cdlog.sh
+  129  vim
+  130  show_version.sh
+  131  adb root
+  132  adb root
+  133  adb root
+  134  adb root
+  135  adb root
+  136  adb root
+  137  show_version.sh
+  138  adb shell getprop | grep cust_
+  139  adb shell
+  140  adb shell getevent
+  141  adb shell
+  142  adb pull /system/usr/keylayout/Generic.kl ./
+  143  adb remount
+  144  adb push Generic.kl  /system/usr/keylayout/
+  145  adb reboot
+  146  adb root
+  147  logcat.sh | grep keycod
+  148  logcat.sh | grep -i keycod
+  149  adb shell dumpsys input | tee dumpsys_input2.txt
+  150  adb shell
+  151  adb remount
+  152  adb shell
+  153  adb push Generic.kl  system/usr/keylayout/
+  154  history >> his.txt
+  155  adbshutdown.sh
+  156  adb push ~/AndroidStudioProjects/framework_demo/apn_sh/2_grok/manage_apn\ \(6\).txt /sdcard/manage_apn
+  157  adb shell
+  158  adb root
+  159  adb shell
+  160  adb remount
+  161  adb push Generic.kl  system/usr/keylayout/
+  162  adb push ~/AndroidStudioProjects/framework_demo/apn_sh/2_grok/manage_apn\ \(7\).txt /sdcard/manage_apn
+  163  adb reboot
+  164  adb root
+  165  adb shell
+  166  adb remount
+  167  adb push Generic.kl  system/usr/keylayout/
+  168  adb shell ls -l system/usr/keylayout/
+  169  adb shell ls -l system/usr/keylayout/Generic.kl
+  170  adb reboot
+  171  adb root
+  172  adb root
+  173  adb root
+  174  adb root
+  175  adb root
+  176  adb root
+  177  adb root
+  178  adb root
+  179  adb root
+  180  adb root
+  181  adb root
+  182  adb root
+  183  adb root
+  184  show_version.sh
+  185  show_batt.sh
+  186  mtgpio.sh 1 in
+  187  mtgpio.sh 1 42
+  188  mtgpio.sh 1 43 in
+  189  mtgpio.sh 43 in
+  190  mtgpio.sh 42 in
+  191  adb shell
+  192  logcat.sh | grep -i keycod
+  193  cp ~/AndroidStudioProjects/framework_demo/apn_sh/2_grok/manage_apn\ \(7\).txt ~/AndroidStudioProjects/MyApplication6/tmlsyslib/src/main/res/raw/manage_apn.sh
+  194  adb remount
+  195  adb push ~/AndroidStudioProjects/framework_demo/apn_sh/2_grok/manage_apn\ \(7\).txt /sdcard/manage_apn.sh
+  196  adb shell
+  197  ls -ltr
+  198  logcat.sh
+  199  kmsg.sh
+  200  lsusb
+  201  lsusb
+  202  lsusb
+  203  adb devices
+  204  adb devices
+  205  kmsg.sh
+  206  ls -ltr ~/bin/evn*
+  207  ls -ltr ~/bin/env*
+  208  cat his.txt | grep tml_de
+  209  adb shell ls -l /sys/kernel/tml_debug
+  210  history >> his.txt
+  211  cat his.txt | grep tml_de
+  212  show_version.sh
+  213  ls -l ~/bin/ | grep bypass
+  214  cat ~/bin/lcd_
+  215  cat ~/bin/lcd_bypass.sh
+  216  lcd_bypass.sh jd9366_dsi_800_1280_truly
+  217  envcfg2.sh
+  218  envcfg2.sh
+  219  envcfg2.sh
+  220  adb shell setprop tml.lcd.timing.up 1
+  221  lcd_bypass.sh jd9366_dsi_800_1280_truly
+  222  envcfg2.sh
+  223  lcd_bypass.sh
+  224  envcfg2.sh
+  225  lcd_bypass.sh jd9366_dsi_800_1280_truly
+  226  cp_cust_bin2.sh -p 89
+  227  open_text.sh share
+  228  cp /Volumes/disk8/code/mt6789/org/alps/kernel-5.10/arch/arm64/boot/dts/mediatek/bat_setting/mt6789_battery_prop.dtsi ./
+  229  show_version.sh
+  230  adb shell 
+  231  adb reboot
+  232  adb shell sysenv_test all
+  233  show_version.sh
+  234  adb root
+  235  adb shell setprop tml.perm.cmd tml12345abcxyz7
+  236  adb shell setprop tml.shell.cmd "setprop tml.debug18 1"
+  237  adb shell setprop tml.shell.cmd "setprop\ tml.debug18\ 1"
+  238  adb shell setprop tml.shell.cmd1 "setprop\ tml.debug19\ 2"
+  239  adb shell getprop tml.shell.cmd
+  240  adb shell getprop tml.shell.cmd1
+  241  adb shell getprop tml.debug18
+  242  adb shell setprop tml.ctrl.up 1
+  243  adb shell getprop tml.debug18
+  244  adb shell getprop tml.debug19
+  245  adb shell getprop tml.shell.cmd
+  246  adb shell getprop tml.shell.cmd1
+  247  adb shell setprop tml.shell.cmd1 " ; setprop\ tml.debug19\ 2"
+  248  adb shell setprop tml.shell.cmd1 ";setprop\ tml.debug19\ 2"
+  249  adb shell setprop tml.shell.cmd1 "\;setprop\ tml.debug19\ 2"
+  250  adb shell getprop tml.shell.cmd1
+  251  history
+  252  sudo chmod ugo+x ~/bin/run_tml_cmd.sh
+  253  run_tml_cmd.sh 
+  254  adb shell getprop tml.debug19
+  255  adb shell getprop tml.debug18
+  256  adb shell getprop | grep date
+  257  pllk.sh
+  258  pllk.sh
+  259  history
+  260  adb shell
+  261  adb shell
+  262  envcfg2.sh
+  263  envcfg2.sh debug_cust_lcd 4,100,1,2,1,0
+  264  envcfg2.sh
+  265  adb reboot
+  266  pllk.sh
+  267  show_version.sh
+  268  pllk.sh
+  269  lcd_on_forever.sh
+  270  show_version.sh
+  271  show_version.sh
+  272  history
+  273  history 30
+  274  adb root
+  275  adb shell setprop tml.shell.cmd "setprop tml.debug18 1"
+  276  adb shell setprop tml.shell.cmd "setprop\ tml.debug18\ 1"
+  277  adb shell setprop tml.shell.cmd1 "\;setprop\ tml.debug19\ 2"
+  278  run_tml_cmd.sh
+  279  logcat.sh
+  280  adb shell
+  281  history
+  282  history 30
+  283  show_version.sh
+  284  envcfg2.sh
+  285  pllk.sh
+  286  show_version.sh
+  287  adb root
+  288  show_version.sh
+  289  adb shell wm size
+  290  mtgpio.sh 15 in
+  291  mtgpio.sh 15 out 1
+  292  lt9211_test.sh 
+  293  lt9211_test.sh 0
+  294  lt9211_test.sh 0
+  295  lt9211_test.sh 0
+  296  lt9211_test.sh 0
+  297  adb root
+  298  adb root
+  299  lt9211_test.sh 0
+  300  lt9211_test.sh 0
+  301  adb root
+  302  lt9211_test.sh 0
+  303  adb root
+  304  lt9211_test.sh 0
+  305  adb root
+  306  lt9211_test.sh 0
+  307  mtgpio.sh 15 in
+  308  mtgpio.sh 15 out 1
+  309  mtgpio.sh 15 in
+  310  mtgpio.sh 16 in
+  311  mtgpio.sh 16 out 1
+  312  mtgpio.sh 16 in
+  313  adb shell "i2ctransfer -y -f 8 w2@0x56 0xff 0x81" 
+  314  adb shell
+  315  cp_cust_bin2.sh -p 89
+  316  ls -ltr
+  317  ls -ltrh
+  318  history 30
+  319  adb shell setprop tml.shell.cmd "setprop\ tml.debug18\ 1"
+  320  adb shell setprop tml.shell.cmd1 "\;setprop\ tml.debug19\ 2"
+  321  history >> his.txt
+  322  run_tml_cmd.sh 
+  323  adb shell getprop tml.debug18
+  324  adb shell getprop tml.debug19
+  325  adb shell setprop tml.shell.cmd1 ""
+  326  adb shell setprop tml.shell.cmd1 " "
+  327  adb shell setprop tml.shell.cmd1 "\ "
+  328  run_tml_cmd.sh 
+  329  adb shell getprop tml.debug19
+  330  adb shell getprop tml.debug18
+  331  setprop tml.debug19  4
+  332  adb shell setprop tml.debug19  4
+  333  adb shell getprop tml.debug19
+  334  run_tml_cmd.sh 
+  335  adb shell setprop tml.debug8  -1
+  336  run_tml_cmd.sh 
+  337  adb shell getprop tml.debug19
+  338  adb shell getprop tml.debug8
+  339  adb shell getprop tml.debug18
+  340  adb shell setprop tml.debug19
+  341  adb shell getprop tml.debug19
+  342  adb shell setprop tml.debug18  -1
+  343  run_tml_cmd.sh 
+  344  adb shell getprop tml.debug18
+  345  adb shell getprop tml.debug19
+  346  adb shell setprop tml.shell.cmd1 "\;setprop\ tml.debug19\ 2"
+  347  adb shell setprop tml.shell.cmd "setprop\ tml.debug18\ 1.1"
+  348  run_tml_cmd.sh 
+  349  adb shell getprop tml.debug19
+  350  adb shell getprop tml.debug18
+  351  logcat.sh
+  352  adb_run_launcher.sh
+  353  logcat.sh
+  354  show_version.sh
+  355  adb shell wm size
+  356  adb reboot
+  357  kmsg.sh
+  358  history
+  359  history 40
+  360  envcfg2.sh
+  361  envcfg2.sh
+  362  show_version.sh
+  363  show_version.sh
+  364  pllk.sh
+  365  pllk.sh
+  366  lcd_on_forever.sh
+  367  envcfg2.sh lcd_t_h 720,11,54,80
+  368  envcfg2.sh lcd_t_v 1280,5,16,2
+  369  envcfg2.sh
+  370  adb reboot
+  371  kmsg.sh
+  372  pllk.sh
+  373  show_version.sh
+  374  envcfg2.sh
+  375  adb root
+  376  show_version.sh
+  377  adb shell getprop  | grep date
+  378  adb shell getprop  | grep date
+  379  show_version.sh
+  380  adbshutdown.sh
+  381  adb_run_launcher.sh
+  382  adb install ~/Desktop/punk/code/tml_release/apks/hardwaretest/tml_test_v1.4.apk
+  383  adb shell
+  384  adb shell getprop | grep cust_
+  385  adb root
+  386  show_version.sh
+  387  cp_cust_bin2.sh -p 89
+  388  adb install ~/Desktop/punk/code/tml_release/apks/hardwaretest/tml_test_v1.4.apk
+  389  cat his.txt | grep spi
+  390  cat ./spi_test_rd.sh
+  391  show_lcd_light.sh
+  392  adb root
+  393  ./spi_test_rd.sh
+  394  show_version.sh
+  395  ./spi_test_rd.sh
+  396  ls -ltr
+  397  history
+  398  ls -ltr *.sh
+  399  cat spi_test_sys.sh
+  400  ls -ltr *.sh
+  401  diff spi_test_sys.sh spi_test.sh
+  402  cat spi_test_sys.sh
+  403  ls -ltr *.sh
+  404  cat spi_test3.sh
+  405  ls -ltr *.sh
+  406  git add spi_test.sh spi_test_sys.sh spi_test_rd.sh
+  407  git commit -m "backup sh for sony ar led debug"
+  408  mkdir sony_led_debug
+  409  cd sony_led_debug
+  410  cd ..
+  411  cat his.txt | grep init
+  412  ls -ltr
+  413  cd sony_led_debug
+  414  adb pull system/etc/init/hw/init.rc ./
+  415  adb pull /system/bin/spi_test_sys.sh ./
+  416  cd ..
+  417  cat his.txt | grep init
+  418  kmsg.sh
+  419  history
+  420  ./spi_test_rd.sh | tee sony_led_debug/rd.txt
+  421  mtgpio.sh 85 in
+  422  adb root
+  423  show_lcd_light.sh
+  424  mtgpio.sh 85 out 0
+  425  ./spi_test_rd.sh | tee spi_rd.txt
+  426  diff spi_rd.txt sony_led_debug/rd.txt
+  427  mtgpio.sh 85 out 1
+  428  ./spi_test_rd.sh | tee spi_rd.txt
+  429  diff spi_rd.txt sony_led_debug/rd.txt
+  430  cat spi_rd.txt
+  431  diff spi_rd.txt sony_led_debug/rd.txt
+  432  mtgpio.sh 85 out 0
+  433  ./spi_test_rd.sh | tee spi_rd.txt
+  434  diff spi_rd.txt sony_led_debug/rd.txt
+  435  cat spi_rd.txt
+  436  mtgpio.sh 85 out 1
+  437  ./spi_test_rd.sh | tee spi_rd.txt
+  438  diff spi_rd.txt sony_led_debug/rd.txt
+  439  ./spi_test.sh
+  440  adb shell wm size
+  441  ./spi_test_rd.sh | tee spi_rd.txt
+  442  diff spi_rd.txt sony_led_debug/rd.txt
+  443  show_lcd_light.sh
+  444  lcd_on_forever.sh
+  445  adbpowkey.sh
+  446  logcat.sh
+  447  adb reboot
+  448  adb root
+  449  adb shell
+  450  adb shell "cat /sys/kernel/tml_debug/g_keymap_kcol1_krow1"
+  451  adb shell "cat /sys/kernel/tml_debug/g_keymap_power_key"
+  452  history
+  453  history >> his.txt
+  454  adb shell "cat /sys/kernel/tml_debug/g_keymap_power_key"
+  455  adb shell "cat /sys/kernel/tml_debug/g_keymap_home_key"
+  456  ls -ltr
+  457  mkdir temp/68_m301_gkj1
+  458  cd temp/68_m301_gkj1
+  459  get_infos.sh
+  460  adb shell
+  461  show_version.sh
+  462  adb shell wm size
+  463  adb root
+  464  show_version.sh
+  465  cd -
+  466  envcfg2.sh
+  467  envcfg2.sh cust_id 117
+  468  envcfg2.sh
+  469  adb reboot
+  470  show_version.sh
+  471  show_version.sh
+  472  cd -
+  473  ls
+  474  cat vers.txt
+  475  cd ..
+  476  mv 68_m301_gkj1 68_m301_gkj3
+  477  cd ..
+  478  envcfg2.sh cust_id 119
+  479  adb reboot
+  480  show_version.sh
+  481  show_version.sh
+  482  adb root
+  483  adb root
+  484  adb shell
+  485  adb root
+  486  adb root
+  487  adb shell
+  488   adb shell
+  489  adbshutdown.sh
+  490  adbshutdown.sh
+  491  adbshutdown.sh
+  492  show_version.sh
+  493  kmsg.sh
+  494  kmsg.sh
+  495  show_version.sh
+  496  adb shell wm szie
+  497  adb shell wm size
+  498  adbpowkey.sh
+  499  adbpowkey.sh
+  500  pllk.sh
+  501  show_version.sh
+  502  mkdir temp/69_huaheng
+  503  cd temp/69_huaheng
+  504  get_infos.sh
+  505  ls -l
+  506  」
+  507  cd --
+  508  cd -
+  509  cd ../..
+  510  adb reboot
+  511  kmsg.sh
+  512  cp_cust_bin2.sh -p 89
+  513  cp_cust_bin2.sh -p 89
+  514  ./spi_test.sh
+  515  adb shell wm size
+  516  ./spi_test_rd.sh
+  517  show_lcd_light.sh
+  518  adbpowkey.sh
+  519  show_lcd_light.sh
+  520  adbpowkey.sh
+  521  cat his.txt | grep 5368
+  522  envcfg2.sh
+  523  envcfg2.sh tml_log 536870912
+  524  envcfg2.sh
+  525  adb reboot
+  526  kmsg.sh
+  527  lsusb
+  528  adb devices
+  529  kmsg.sh
+  530  show_version.sh
+  531  envcfg2.sh
+  532  history
+  533  history >> his.txt
+  534  echo "envcfg2.sh tml_log 536870912"  >> sony_led_debug/log.txt
+  535  ./spi_test_rd.sh
+  536  ./spi_test.sh
+  537  ./spi_test_rd.sh
+  538  show_lcd_light.sh
+  539  adbpowkey.sh
+  540  adbpowkey.sh
+  541  adb shell wm size
+  542  ./spi_test.sh
+  543  adbpowkey.sh
+  544  adbpowkey.sh
+  545  show_lcd_light.sh
+  546  ./spi_test_rd.sh
+  547  ./spi_test_rd.sh
+  548  lsusb
+  549  lsusb
+  550  lsusb
+  551  show_lcd_light.sh
+  552  show_lcd_light.sh
+  553  show_lcd_light.sh
+  554  ./spi_test_rd.sh
+  555  ./spi_test_rd.sh
+  556  ./spi_test_rd.sh
+  557  show_lcd_light.sh
+  558  ./spi_test.sh
+  559  ./spi_test_rd.sh
+  560  show_lcd_light.sh
+  561  ./spi_test.sh
+  562  ./spi_test_rd.sh
+  563  adbpowkey.sh
+  564  adbpowkey.sh
+  565  show_lcd_light.sh
+  566  ./spi_test_rd.sh
+  567  mtgpio.sh 16 in
+  568  mtgpio.sh 85 in
+  569  mtgpio.sh 85 out 1
+  570  ./spi_test_rd.sh
+  571  ./spi_test.sh
+  572  ./spi_test_rd.sh
+  573  history
+  574  ./spi_test_rd.sh
+  575  history
+  576   mtgpio.sh 85 out 0
+  577   mtgpio.sh 85 out 1
+  578  ./spi_test_rd.sh
+  579  ./spi_test.sh
+  580  ./spi_test.sh
+  581  ./spi_test_rd.sh 
+  582   mtgpio.sh 85 out 0
+  583   mtgpio.sh 85 out 1
+  584   mtgpio.sh 85 in
+  585  ./spi_test.sh
+  586  ./spi_test_rd.sh 
+  587   mtgpio.sh 85 in
+  588   mtgpio.sh 85 mode 1
+  589  ./spi_test_rd.sh 
+  590  adbpowkey.sh
+  591   mtgpio.sh 85 in
+  592   mtgpio.sh 85 out 1
+  593  ./spi_test_rd.sh 
+  594  ./spi_test.sh
+  595  adbpowkey.sh
+  596   mtgpio.sh 85 in
+  597  ./spi_test_rd.sh 
+  598  envcfg2.sh
+  599  envcfg2.sh
+  600  envcfg2.sh hdmi768 1
+  601  envcfg2.sh
+  602  adb reboot
+  603  git log -p spi_test_rd.sh
+  604  adb devices
+  605  ./spi_test_rd.sh 
+  606  ./spi_test.sh 
+  607  ./spi_test_rd.sh 
+  608  cd sony_led_debug
+  609  ls
+  610  cd ..
+  611  cat his.txt | grep init.rc
+  612  show_version.sh
+  613  ls -l
+  614  show_version.sh
+  615  cd sony_led_debug
+  616  adb root
+  617  adb remount
+  618  cat ../his.txt | grep init.rc
+  619  adb push init.rc /system/etc/init/hw/init.rc
+  620  cat ../his.txt | grep spi_tes
+  621  ls -l
+  622  vim
+  623  adb push spi_test_sys.sh /system/bin/
+  624  adbshutdown.sh
+  625  show_version.sh
+  626  cd ..
+  627  ./spi_test_rd.sh
+  628  show_version.sh
+  629  adb shell wm size
+  630  adb devices
+  631  adb install ~/Desktop/punk/code/tml_release/gpiotest/v1.11/gpiotest2-v1.1.apk
+  632  history
+  633  history >> his.txt
+  634  lcd_to.sh
+  635  lcd_to.sh
+  636  show_lcd_light.sh
+  637  adb root
+  638  lcd_to.sh
+  639  kmsg.sh
+  640  show_version.sh
+  641  show_version.sh
+  642  show_version.sh
+  643  show_version.sh
+  644  show_version.sh
+  645  cat his.txt | grep lcd_dr
+  646  cat his.txt | grep bypass
+  647  ls -ltr ~/bin/
+  648  cat ~/bin/lcd_bypass.sh
+  649  show_version.sh
+  650  lcd_bypass.sh lt8912_mipi_hdmi
+  651  envcfg2.sh
+  652  cat his.txt | grep debug_cust_lcd
+  653  envcfg2.sh debug_cust_lcd 4,100,1,2,1,0
+  654  envcfg2.sh
+  655  cat his.txt | grep lcd_t_h
+  656  cat his.txt
+  657  git diff his.txt
+  658  envcfg2.sh lcd_t_h 800,20,40,20
+  659  envcfg2.sh lcd_t_h 800,20,40,20
+  660  envcfg2.sh
+  661  envcfg2.sh lcd_v_h 1280,4,20,20
+  662  lcd_on_forever.sh
+  663  show_version.sh
+  664  adb reboot
+  665  show_version.sh
+  666  adb shell wm size
+  667  history
+  668  envcfg2.sh lcd_t_v 1280,4,20,20
+  669  envcfg2.sh 
+  670  show_version.sh
+  671  adb reboot
+  672  show_version.sh
+  673  adb shell wm size
+  674  kmsg.sh
+  675  show_version.sh
+  676  gpiocfg.sh FLAG_LCD2_H_ACTIVE
+  677  gpiocfg.sh FLAG_LCD2_H_SYNC_TIME
+  678  gpiocfg.sh FLAG_LCD2_V_SYNC_TIME
+  679  gpiocfg.sh FLAG_LCD2_H_SYNC_TIME
+  680  history
+  681  history 30
+  682  history 20
+  683  history 20 >> his.txt
+  684  adb shell
+  685  gpiocfg.sh FLAG_LCD2_V_ACTIVE
+  686  gpiocfg.sh FLAG_LCD2_HBP
+  687  which hdmi_size.sh
+  688  which hdmi_size.sh | xargs cat 
+  689  show_lcd_light.sh
+  690  show_version.sh
+  691  envcfg2.sh
+  692  envcfg2.sh hdmi768 2
+  693  envcfg2.sh
+  694  pllk.sh
+  695  adb shell wm size
+  696  pllk.sh
+  697  envcfg2.sh
+  698  pllk.sh
+  699  kmsg.sh
+  700  show_version.sh
+  701  envcfg2.sh hdmi768 0
+  702  adbshutdown.sh
+  703  envcfg2.sh
+  704  envcfg2.sh hdmi768 2
+  705  envcfg2.sh
+  706  adbshutdown.sh
+  707  show_version.sh
+  708  kmsg.sh
+  709  pllk.sh
+  710  ls -ltr
+  711  cp pl_lk.txt pl_lk_hdmi768_error.txt
+  712  envcfg2.sh hdmi768 0
+  713  adbshutdown.sh
+  714  pllk.sh
+  715  show_version.sh
+  716  envcfg2.sh hdmi768 0
+  717  adbshutdown.sh
+  718  ls -ltr
+  719  cp pl_lk.txt pl_lk_hdmi768_ok.txt
+  720  show_version.sh
+  721  adbshutdown.sh
+  722  show_version.sh
+  723  adb shell wm size
+  724  kmsg.sh
+  725  show_version.sh
+  726  gpiocfg.sh FLAG_LCD2_H_ACTIVE
+  727  gpiocfg.sh FLAG_LCD2_H_ACTIVE
+  728  cat his.txt | grep envcfg | grep tml
+  729  show_version.sh
+  730  envcfg2.sh tml_log 536870912
+  731  envcfg2.sh
+  732  kmsg.sh
+  733  kmsg.sh
+  734  cp /Volumes/disk8/code/mt6789/org/alps/kernel-5.10/drivers/spi/spi-wk2xxx.c ./
+  735  history
+  736  history >> his.txt
+  737  git add his.txt
+  738  git commit -m "backup his.txt"
+  739  cp /Volumes/disk8/code/mt6789/org/alps/vendor/mediatek/proprietary/bootable/bootloader/lk2/dev/lcm/lt8912_mipi_hdmi/lt8912_mipi_hdmi.c ./lt8912_mipi_hdmi_89.c
+  740  which open_text.sh | xargs cat 
+  741  open_text.sh temp.txt
+  742  cat his.txt | grep sqli
+  743  ls -l ~/bin/ | grep push
+  744  cp ~/bin/push_box.sh ~/bin/push_sqlite.sh
+  745  ls -ltr spi*
+  746  cat spi_rd.txt
+  747  adb devices
+  748  show_version.sh
+  749  show_version.sh
+  750  adb shell wm size
+  751  adb shell getprop | grep cust_
+  752  kmsg.sh
+  753  adb reboot
+  754  kmsg.sh
+  755  show_version.sh
+  756  adbshutdown.sh
+  757  ls -ltr
+  758  cp_cust_bin2.sh -p 89
+  759  kmsg.sh
+  760  pllk.sh
+  761  adb device
+  762  adb devices
+  763  adb shell wm size
+  764  adbshutdown.sh
+  765  adb shell wm size
+  766  mkdir debug
+  767  mkdir debug/1_genawei
+  768  ls -ltr
+  769  cp pl_lk.txt debug/1_genawei
+  770  cp kmsg.txt debug/1_genawei
+  771  adb devices
+  772  adb devices
+  773  adb devices
+  774  adb shell wm size
+  775  envcfg2.sh
+  776  envcfg2.sh hdmi768 2
+  777  adbshutdown.sh
+  778  envcfg2.sh
+  779  show_version.sh
+  780  envcfg2.sh lvds_pclk 50000
+  781  envcfg2.sh
+  782  adbshutdown.sh
+  783  show_version.sh
+  784  pllk.sh
+  785  envcfg2.sh
+  786  ./spi_test.sh
+  787  ./spi_test_rd.sh
+  788  ls -ltr ~/bin/*.sh
+  789  cp ~/bin/lcd_bypass.sh ~/bin/lcd_rst.sh
+  790  mtgpio.sh 85 in
+  791  mtgpio.sh 85 mode 0
+  792  mtgpio.sh 85 in
+  793  lcd_rst.sh
+  794  ./spi_test_rd.sh
+  795  ./spi_test.sh
+  796  show_lcd_light.sh
+  797  adbpowkey.sh
+  798  adbpowkey.sh
+  799  ./spi_test_rd.sh
+  800  adbshutdown.sh
+  801  cd sony_led_debug
+  802  ls
+  803  cat log.txt
+  804  cd ..
+  805  history
+  806  history 30
+  807  ls -l sony_led_debug
+  808  cat his.txt | grep spi_test_sys.sh
+  809  cat his.txt | grep init.rc
+  810  show_version.sh
+  811  envcfg2.sh hdmi768 2
+  812  envcfg2.sh lvds_pclk 50000
+  813  envcfg2.sh
+  814  adbshutdown.sh
+  815  envcfg2.sh
+  816  adbshutdown.sh
+  817  adbshutdown.sh
+  818  adbshutdown.sh
+  819  adbshutdown.sh
+  820  envcfg2.sh
+  821  ./spi_test.sh
+  822  ./spi_test_rd.sh
+  823  lcd_rst.sh
+  824  ./spi_test_rd.sh
+  825  ./spi_test.sh
+  826  ./spi_test_rd.sh
+  827  show_version.sh
+  828  adb devices
+  829  adb reboot-bootloader
+  830  fastboot devices
+  831  fastboot devices
+  832  fastboot devices
+  833  fastboot reboot
+  834  cp_cust_bin2.sh -p 89
+  835  cp_cust_bin2.sh -p 89
+  836  ls -ltr ~/bin/
+  837  cp ~/bin/cp_cust_bin2.sh ~/bin/cp_mem.sh
+  838  cp_mem.sh 39
+  839  ls -ltr
+  840  open_text.sh ~/bin/spi_read_reg.sh
+  841  open_text.sh ~/bin/spi_debug.sh
+  842  open_text.sh spi_sony_wr.txt
+  843  ls -ltr
+  844  diff spi_sony_wr.txt spi_read_result.txt
+  845  show_version.sh
+  846  cp_cust_bin2.sh -p 89_all
+  847  ls -l /Volumes/release/bin/evb/mt6789
+  848  ls -l /Volumes/release/bin/evb/mt6789/gkj4/
+  849  cp m301_arMd_202510281145_v1.22c.zip /Volumes/release/bin/evb/mt6789/gkj4/
+  850  adb shell settings get global policy_control
+  851  adb shell settings put global policy_control immersive.navigation=*
+  852  adb shell "settings put global policy_control immersive.navigation=*"
+  853  adb shell "settings put global policy_control null"
+  854  adb shell "settings put global policy_control null"
+  855  adb shell "settings put global policy_control immersive.status=*"
+  856  envcfg2.sh tml_log 536870912
+  857  kmsg.sh
+  858  kmsg.sh
+  859  mtgpio.sh 84 in
+  860  mtgpio.sh 84 mode 0
+  861  mtgpio.sh 84 in
+  862  mtgpio.sh 84 dir out
+  863  mtgpio.sh 84 in
+  864  mtgpio.sh 84 out 1
+  865  cp_mem.sh 39
+  866  ls -ltr
+  867  cp_mem.sh 65
+  868  ls -ltr
+  869  cp_mem.sh 65 1
+  870  ls -ltr
+  871  show_version.sh
+  872  mkdir temp/70_m201_gkj2
+  873  cd temp/70_m201_gkj2
+  874  get_infos.sh
+  875  cd -
+  876  cp_mem.sh 39 1
+  877  lcd_to.sh
+  878  lcd_to.sh
+  879  lcd_to.sh
+  880  lcd_to.sh 30
+  881  show_version.sh
+  882  adb shell wm size
+  883  mtgpio.sh 101 in
+  884  mtgpio.sh 101 in
+  885  mtgpio.sh 101 in
+  886  mtgpio.sh 101 in
+  887  mtgpio.sh 101 in
+  888  adb_run_launcher.sh
+  889  logcat.sh
+  890  logcat.sh
+  891  logcat.sh
+  892  envcfg2.sh cust_id 113
+  893  adb reboot
+  894  show_version.sh
+  895  show_version.sh
+  896  cat his.txt | grep -i settim
+  897   adb shell am broadcast -a "temolin.intent.action.settime  --el tml.time 1584522728000"
+  898  envcfg2.sh eth_mac 98:01:a7:aa:df:85
+  899  envcfg2.sh
+  900  adb reboot
+  901  kmsg.sh
+  902  adb root
+  903  adb shell 
+  904  history
+  905  history >> his.txt
+  906  cp_cust_bin2.sh -p 89
+  907  mkdir temp/71_yc10_m301_eth_prop
+  908  cd temp/71_yc10_m301_eth_prop
+  909  adb root
+  910  get_infos.sh
+  911  envcfg2.sh
+  912  envcfg2.sh | tee env.txt
+  913  ls -ltr
+  914  cd -
+  915  ls -ltr
+  916  rm m301_202510290906_v1.22d_rel.zip m301_202510271933_v1.22a_rel.zip
+  917  pllk.sh
+  918  adb shell
+  919  ls -ltr
+  920  cp_cust_bin2.sh -p 89
+  921  pllk.sh
+  922  kmsg.sh
+  923  . cdlog.sh
+  924  ls
+  925  cd 6765
+  926  ls
+  927  cd a
+  928  cd aihua
+  929  ls
+  930  cd eth
+  931  ls
+  932  mkdir 5
+  933  cd 5
+  934  getmblog.sh
+  935  du -d 1 -h ./
+  936  tree ./
+  937  adbpowkey.sh
+  938  pwd
+  939  cd ~/bin/
+  940  ls -ltr
+  941  git status ./
+  942  ls -lrt *.swp
+  943  ls -lrt *swp
+  944  ls -l *.swp
+  945  ls -l
+  946  ls -la *.swp
+  947  ls -la 
+  948  ls -la  | grep swp
+  949  ls -la *.sh
+  950  ls -la *.swp
+  951  ls -la  | grep swp
+  952  ls -la *.sh.swp
+  953  ls -la *.swp
+  954  ls -l *.swp
+  955  ls -l .*.swp
+  956  rm .*.swp 
+  957  ls -l .*.swp
+  958  git status ./
+  959  git add lt9211_test.sh  envcfg2.sh tp_test.sh cp_logo.sh open_text.sh m301_spi0.sh
+  960  git commit -m "update sh"
+  961  git status ./
+  962  cat update.bat
+  963  git status ./
+  964  cat up_mk2.sh
+  965  cat cust_xiatuo.sh
+  966  git add cust_xiatuo.sh && git commit -m "add for xiatuo"
+  967  git status ./
+  968  adb devices
+  969  show_lcd_light.sh
+  970  show_lcd_light.sh
+  971  adb devices
+  972  adb devices
+  973  adb devices
+  974  adb devices
+  975  adb devices
+  976  lsusb
+  977  lsusb
+  978  lsusb
+  979  lsusb
+  980  lsusb
+  981  lsusb
+  982  adb shell wm size
+  983  show_lcd_light.sh
+  984  adbpowkey.sh
+  985  adbpowkey.sh
+  986  show_lcd_light.sh
+  987  show_lcd_light.sh
+  988  show_lcd_light.sh
+  989  show_lcd_light.sh
+  990  show_lcd_light.sh
+  991  show_lcd_light.sh
+  992  cd ~/Desktop/punk/code/web
+  993  ls
+  994  cd vue
+  995  ls
+  996  vim
+  997  tmux
+  998  jq
+  999  tmux a -t 0
+ 1000  vim
+ 1001  pwd
+ 1002  ls -l
+ 1003  git init
+ 1004  ls -l
+ 1005  ls -la
+ 1006  git add *
+ 1007  git commit -m "backup original code"
+ 1008  tree ./
+ 1009  npm install
+ 1010  proxychains4 npm install
+ 1011  proxychains4 npm install
+ 1012  sudo chown -R $(whoami):staff ~/.npm
+ 1013  cp env.example .env
+ 1014  ls -la
+ 1015  npm run dev
+ 1016  nvm ls
+ 1017  nvm use v20.19.0
+ 1018  npm run dev
+ 1019  git status ./
+ 1020  git diff ./
+ 1021  git status ./
+ 1022  git add .
+ 1023  git status ./
+ 1024  git commit -m "backup working"
+ 1025  git status ./
+ 1026  git add ./.
+ 1027  git status ./
+ 1028  git commit -m "add support for vim plugin"
+ 1029  git log -p server
+ 1030  cd ..
+ 1031  ls -ltr
+ 1032  ./gradlew :tmlsyslib:assembleRelease
+ 1033  ./gradlew :tmlsyslib:assembleRelease
+ 1034  ./gradlew :tmlsyslib:assembleRelease
+ 1035  cd -
+ 1036  ./cplib.sh
+ 1037  cd ..
+ 1038  ./gradlew :tmlsyslib:assembleRelease
+ 1039  cd -
+ 1040  ./cplib.sh
+ 1041  npm run dev
+ 1042  history
+ 1043  history
+ 1044  history 40
+  989  76320763200
+  990  . sshsrv.sh
+  991  adb kill-server && adb start-server
+  992  adb devcies
+  993  adb devices
+  994  lsusb
+  995  adb devices
+  996  adb kill-server
+  997  sudo killall -9 adb 
+  998  adb start-server
+  999  adb devices
+ 1000  adb -P 5038 server nodaemon
+ 1001  source /Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+ 1002  source /Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh
+ ===ppp add, copy from cursor
+ curl -s http://localhost:3000/api/form/definition 2>&1 | head -20
+ ===ppp end
+ 1003  cd /Users/macbookpro/Desktop/punk/code/web/vue/simple_form && npm run dev 2>&1 | grep -i error | head -10 || echo "检查开发服务器日志..."
+ 1004  history
