@@ -8,19 +8,37 @@ export function generateVerificationCode(): string {
 }
 
 /**
- * 发送验证码（开发环境：输出到控制台；生产环境：接入短信服务）
+ * 发送验证码
  */
 export async function sendVerificationCode(phone: string, code: string): Promise<boolean> {
-  // TODO: 生产环境接入真实的短信服务（阿里云、腾讯云等）
-  // 开发环境：输出到控制台
-  console.log(`\n📱 [短信验证码]`)
-  console.log(`   手机号: ${phone}`)
-  console.log(`   验证码: ${code}`)
-  console.log(`   有效期: 5分钟\n`)
-  
-  // 模拟发送延迟
-  await new Promise(resolve => setTimeout(resolve, 500))
-  
+  const config = useRuntimeConfig()
+  const smsPushUrl = config.smsPushUrl || process.env.SMS_PUSH_URL
+
+  // 如果没有配置外部服务，则回退到控制台输出（开发环境）
+  if (!smsPushUrl) {
+    console.warn('[sms] 未配置 smsPushUrl，使用控制台输出模拟发送')
+    console.log(`\n📱 [短信验证码 - 模拟发送]`)
+    console.log(`   手机号: ${phone}`)
+    console.log(`   验证码: ${code}`)
+    console.log(`   有效期: 5分钟\n`)
+    return true
+  }
+
+  const url = new URL(smsPushUrl)
+  url.searchParams.set('code', code)
+  url.searchParams.set('targets', phone)
+
+  const response = await fetch(url.toString(), {
+    method: 'GET'
+  })
+
+  if (!response.ok) {
+    const text = await response.text()
+    console.error('[sms] 发送失败:', text)
+    throw new Error('短信发送失败')
+  }
+
+  console.log('[sms] 验证码已通过 push.spug.cc 发送')
   return true
 }
 

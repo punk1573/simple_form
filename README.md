@@ -37,7 +37,10 @@ cp .env.example .env
 
 ```env
 MONGODB_URI=mongodb://localhost:27017/simple_form
+SMS_PUSH_URL=https://push.spug.cc/send/你的Token
 ```
+
+> `SMS_PUSH_URL` 示例：`https://push.spug.cc/send/E3w5LmlZe6rxYea4`。程序会自动附加 `code` 与 `targets` 参数，如：`?code=123456&targets=13800138000`。
 
 ### 3. 启动 MongoDB
 
