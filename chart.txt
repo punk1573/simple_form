@@ -1,0 +1,103 @@
+检查项目结构，开始实现手机验证码功能（生成、存储、验证）。
+
+
+[3 tools called]
+
+
+实现手机验证码功能：创建验证码存储模型和工具函数。
+
+
+[5 tools called]
+
+
+在表单中添加验证码输入框和发送按钮：
+
+
+[3 tools called]
+
+
+在 script 部分添加验证码相关逻辑：
+
+
+[7 tools called]
+
+
+手机验证码功能已实现。功能概览如下：
+
+## 已完成的功能
+
+### 1. 后端实现
+- 验证码模型 (`server/models/VerificationCode.ts`)
+  - 存储验证码、手机号、过期时间
+  - 自动过期删除（5 分钟）
+- 工具函数 (`server/utils/sms.ts`)
+  - 生成 6 位数字验证码
+  - 频率限制（60 秒内只能发送一次）
+  - 验证码验证
+- API 接口
+  - `POST /api/sms/send` - 发送验证码
+  - `POST /api/sms/verify` - 验证验证码
+
+### 2. 前端实现
+- 验证码输入框（在手机号字段下方）
+- 发送验证码按钮
+- 60 秒倒计时（防止频繁发送）
+- 表单提交前验证验证码
+
+### 3. 功能特性
+- 6 位数字验证码
+- 5 分钟有效期
+- 60 秒发送频率限制
+- 验证码使用后自动标记
+- 开发环境：验证码输出到控制台
+- 生产环境：需要接入真实短信服务
+
+## 使用流程
+
+1. 用户输入手机号
+2. 点击“发送验证码”
+3. 查看验证码（开发环境在控制台，生产环境通过短信）
+4. 输入验证码
+5. 提交表单（自动验证验证码）
+
+## 开发环境测试
+
+1. 输入手机号（如：`13800138000`）
+2. 点击“发送验证码”
+3. 查看服务器控制台输出：
+   ```
+   📱 [短信验证码]
+      手机号: 13800138000
+      验证码: 123456
+      有效期: 5分钟
+   ```
+4. 输入验证码并提交
+
+
+## 生产环境接入真实短信服务
+
+需要修改 `server/utils/sms.ts` 中的 `sendVerificationCode` 函数，接入第三方短信服务：
+
+```typescript
+// 示例：接入阿里云短信服务
+import * as SMSClient from '@alicloud/sms-sdk'
+
+export async function sendVerificationCode(phone: string, code: string): Promise<boolean> {
+  // 替换为真实的短信服务调用
+  const client = new SMSClient({
+    accessKeyId: process.env.ALIYUN_ACCESS_KEY_ID,
+    secretAccessKey: process.env.ALIYUN_SECRET_ACCESS_KEY
+  })
+  
+  await client.sendSMS({
+    PhoneNumbers: phone,
+    SignName: '您的签名',
+    TemplateCode: 'SMS_123456789',
+    TemplateParam: JSON.stringify({ code })
+  })
+  
+  return true
+}
+```
+
+功能已就绪，可开始测试。如需接入真实短信服务或调整验证码规则，告知即可。

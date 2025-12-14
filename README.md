@@ -151,19 +151,50 @@ Content-Type: application/json
 
 ## 部署
 
-### 使用 Vercel 部署
+### 方式一：Vercel 部署（推荐，最简单）
 
-1. 安装 Vercel CLI: `npm i -g vercel`
-2. 运行: `vercel`
-3. 配置环境变量 `MONGODB_URI`
+**详细步骤请查看 [Vercel 部署指南](./DEPLOY_VERCEL.md)**
 
-### 使用 Docker 部署
+#### 快速开始
+
+**使用 GitHub（推荐）**:
+1. 将代码推送到 GitHub
+2. 访问 [vercel.com](https://vercel.com) 并登录
+3. 导入 GitHub 仓库
+4. 配置环境变量（MONGODB_URI, SMS_PUSH_URL）
+5. 自动部署完成 ✅
+
+**手动部署（无需 GitHub）**:
+```bash
+# 安装 Vercel CLI
+npm install -g vercel
+
+# 登录
+vercel login
+
+# 部署
+vercel --prod
+
+# 配置环境变量
+vercel env add MONGODB_URI production
+vercel env add SMS_PUSH_URL production
+```
+
+**注意**: Vercel 必须使用 MongoDB Atlas（云端数据库），不支持本地 MongoDB。
+
+### 方式二：云服务器部署
+
+**详细步骤请查看 [云服务器部署指南](./DEPLOY.md)**
+
+使用 PM2 + Nginx 部署到云服务器（阿里云、腾讯云等）。
+
+### 方式三：Docker 部署
 
 ```dockerfile
 FROM node:20-alpine
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm install --production
 COPY . .
 RUN npm run build
 EXPOSE 3000
