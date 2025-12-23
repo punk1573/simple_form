@@ -4,6 +4,11 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nuxtjs",
-  "regions": ["hkg1"]
+  "regions": ["hkg1"],
+  "functions": {
+    "server/**/*.ts": {
+      "maxDuration": 30
+    }
+  }
 }
 

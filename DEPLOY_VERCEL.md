@@ -347,11 +347,31 @@ node_modules
 
 ## 常见问题
 
-### 1. 构建失败
+### 1. 构建失败 - 模块未找到
 
-**问题**: 构建时出错
+**问题**: `Could not load @nuxtjs/tailwindcss. Is it installed?`
+
+**原因**: Nuxt 模块在 `devDependencies` 中，但 Vercel 构建时需要它们
 
 **解决**:
+1. 将构建时需要的模块移到 `dependencies`：
+   ```json
+   {
+     "dependencies": {
+       "@nuxtjs/tailwindcss": "^6.12.0",
+       // ... 其他依赖
+     }
+   }
+   ```
+2. 提交并推送代码：
+   ```bash
+   git add package.json
+   git commit -m "Fix: Move tailwindcss to dependencies"
+   git push
+   ```
+3. Vercel 会自动重新部署
+
+**其他构建错误**:
 ```bash
 # 本地测试构建
 npm run build
